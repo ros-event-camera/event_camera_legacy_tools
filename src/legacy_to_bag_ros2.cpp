@@ -60,7 +60,7 @@ static auto processMsg(
   enc->setSensorTime(firstEventTime.nanoseconds());
   // use encoder to convert events
   for (const auto & e : inMsg->events) {
-    enc->encodeCD((e.ts.nanosec - firstEventTime.nanoseconds()), e.x, e.y, e.polarity);
+    enc->encodeCD((rclcpp::Time(e.ts).nanoseconds() - firstEventTime.nanoseconds()), e.x, e.y, e.polarity);
   }
   enc->flush();
   outBag->write(outMsg, topic, inMsg->header.stamp);
