@@ -48,7 +48,8 @@ static auto processMsg(
   }
   event_camera_msgs::msg::EventPacket outMsg;
   outMsg.header = inMsg->header;
-  enc->setBuffer(&outMsg.events);
+  std::vector<uint8_t> & buffer = outMsg.events;
+  enc->setBuffer(&buffer);
   // use first event time to set sensor time
   const rclcpp::Time firstEventTime(inMsg->events[0].ts);
   outMsg.time_base = firstEventTime.nanoseconds();
