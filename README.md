@@ -52,3 +52,4 @@ ros2 run event_camera_legacy_tools legacy_to_bag -b <input_bag_file> -o <output_
 ## License
 
 This software is issued under the Apache License Version 2.0.
+
