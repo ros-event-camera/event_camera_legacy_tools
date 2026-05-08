@@ -1,8 +1,4 @@
 repositories:
-  event_camera_msgs:
-    type: git
-    url: https://github.com/ros-event-camera/event_camera_msgs.git
-    version: master
   dvs_msgs:
     type: git
     url: https://github.com/ros-event-camera/dvs_msgs.git
@@ -10,8 +6,4 @@ repositories:
   prophesee_event_msgs:
     type: git
     url: https://github.com/ros-event-camera/prophesee_event_msgs.git
-    version: master
-  event_camera_codecs:
-    type: git
-    url: https://github.com/ros-event-camera/event_camera_codecs.git
     version: master
