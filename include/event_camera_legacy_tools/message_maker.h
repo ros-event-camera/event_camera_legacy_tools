@@ -206,7 +206,8 @@ bool MessageMaker<EventPacket>::eventExtTrigger(uint64_t sensor_time, uint8_t ed
 template <>
 void MessageMaker<EventPacket>::initializeMoreEvent()
 {
-  eventEncoder_->setBuffer(&(eventMsg_->events));
+  std::vector<uint8_t> & buffer = eventMsg_->events;
+  eventEncoder_->setBuffer(&buffer);
   eventMsg_->is_bigendian = check_endian::isBigEndian();
   eventMsg_->encoding = "mono";
 }
@@ -214,7 +215,8 @@ void MessageMaker<EventPacket>::initializeMoreEvent()
 template <>
 void MessageMaker<EventPacket>::initializeMoreTrigger()
 {
-  triggerEncoder_->setBuffer(&(triggerMsg_->events));
+  std::vector<uint8_t> & buffer = eventMsg_->events;
+  triggerEncoder_->setBuffer(&buffer);
   triggerMsg_->is_bigendian = check_endian::isBigEndian();
   triggerMsg_->encoding = "trigger";
 }
