@@ -101,7 +101,7 @@ if(BUILD_TESTING)
   ament_cppcheck(LANGUAGE c++)
   ament_cpplint(FILTERS "-build/include,-runtime/indentation_namespace")
   ament_clang_format(CONFIG_FILE .clang-format)
-  # ament_black()   comment out for now
+  ament_black()
   ament_lint_cmake()
   ament_xmllint()
 endif()
